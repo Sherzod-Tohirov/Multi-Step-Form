@@ -1,0 +1,431 @@
+@use "../mixins" as mx;
+
+
+.hide {
+    display: none !important;
+}
+
+.project__error-msg {
+    position: absolute;
+    left: 6px;
+    bottom: -20px;
+    @include mx.typography(inherit, 700, 12px, normal, start, #ff0707);
+}
+
+.is-invalid label {
+    color: #f90909 !important;
+}
+
+.is-invalid input {
+    
+    border-color: #f40a26 !important;
+
+    &::placeholder {
+        color: #ed0202 !important;
+    }
+}
+
+.is-invalid:has(.user-icon) .user-icon {
+    background-image: url("../images/error/user.svg") !important; 
+}
+
+.is-invalid:has(.email-light-icon) .email-light-icon {
+    background-image: url("../images/error/mail.svg") !important; 
+}
+
+.is-invalid:has(.tel-icon) .tel-icon {
+    background-image: url("../images/error/tel.svg") !important; 
+}
+
+.is-invalid:has(.company-icon) .company-icon {
+    background-image: url("../images/error/building.svg") !important; 
+}
+.invalid-label {
+    border-color: #f40a26 !important;
+}
+
+
+@media only screen and (min-width: 0) {
+    .project {
+        padding-top: 52px;
+        padding-bottom: 100px;
+    }
+    
+    .project__wrapper {
+        @include mx.flexbox(column, center, center);
+    }
+
+    .project__inner-wrapper {
+        @include mx.flexbox(column, center, center);
+        max-width: 700px;
+        width: 100%;
+    }
+
+    .project__details-wrapper {
+        @include mx.flexbox(column, center, center);
+        gap: 12px;
+        max-width: 566px;
+        width: 100%;
+        margin-bottom: 43px;
+    } 
+
+    .project__title {
+        @include mx.remove-margin;
+        @include mx.typography("DM Sans", 700, 34px, 46px, center, var(--neutral-800));
+    }
+
+    .project__desc {
+        @include mx.remove-margin;
+        @include mx.typography("DM Sans", 400, 18px, 30px, center, var(--neutral-600));
+    }
+
+    .project__card {
+        width: 100%;
+        margin-bottom: 32px;
+        padding: 33px 56px 61px 46px;
+        border-radius: 34px;
+        border: 1px solid var(--neutral-300);
+        background: var(--neutral-100);
+        box-shadow: 0px 5px 16px 0px rgba(8, 15, 52, 0.06);
+    }
+
+    .project__card-header {
+        padding-bottom: 33px;
+        border-bottom: 1px solid var(--neutral-400);
+    }
+
+    .project__progress-wrapper {
+        @include mx.flexbox(row, center, center);
+        gap: 18px;
+    }
+
+    .project__point {
+        @include mx.flexbox(row, center, center);
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background-color: var(--neutral-300);
+        @include mx.typography("DM Sans", 400, 19px, 23px, center, var(--neutral-600));
+        transition: background-color 0.2s ease,
+            color 0.2s ease;
+    }
+
+    .active-point {
+        background-color: var(--main-color) !important;
+        color: var(--neutral-100) !important;
+    }
+
+    .project__line {
+        position: relative;
+        width: 98px;
+        height: 6px;
+        border-radius: 40px;
+        background-color: var(--neutral-300);
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: inherit;
+            border-radius: inherit;
+            background-color: var(--main-color);
+            transition: width 0.2s ease;
+        }
+    }
+
+    .half-line {
+        &::before {
+            width: 50%;
+        }
+    }
+
+    .full-line {
+        &::before {
+            width: 100%;
+        }
+    }
+
+    .project__card-body {
+        padding-top: 41px;
+    }
+
+    .project__card-step-wrapper {
+        @include mx.flexbox(column, flex-start, center);
+        margin-bottom: 20px;
+        padding-top: 23px;
+    }
+
+    .project__card-info-wrapper {
+        @include mx.flexbox(column, flex-start, center);
+        gap: 8px;
+        margin-bottom: 39px;
+    }
+
+    .project__card-title {
+        @include mx.remove-margin;
+        @include mx.typography("DM Sans", 700, 24px, 35px, start, var(--neutral-800));
+    }
+
+    .project__card-desc {
+        @include mx.remove-margin;
+        @include mx.typography("DM Sans", 400, 18px, 30px, start, var(--neutral-600));
+    }
+
+    .project__form {
+        @include mx.flexbox(row, flex-start, flex-start);
+        flex-wrap: wrap;
+    }
+
+    .project__form--customer-info {
+        gap: 44px 28px;
+
+        &:has(.project__form-group) .project__form-group {
+            position: relative;
+            @include mx.flexbox(column, flex-start, flex-start);
+    
+        }
+
+        &:has(.project__label) .project__label {
+            @include mx.typography("DM Sans", 500, 18px, 20px, start, var(--neutral-800));
+            margin-bottom: 18px;
+        }
+
+        &:has(.project__input) .project__input {
+            width: 284px;
+            padding: 22px 46px 25px 20px;
+            @include mx.typography("DM Sans", 400, 18px, 20px, start, var(--neutral-600));
+            border: 1px solid var((--neutral-300));
+            border-radius: 46px;
+            filter: drop-shadow(0px 2px 6px rgba(19, 18, 66, 0.07));
+
+            .project__input::placeholder {
+                @include mx.typography("DM Sans", 400, 18px, 20px, start, var(--neutral-600));
+            }
+            
+        }
+
+        &:has(.project__icon) .project__icon {
+            position: absolute;
+            bottom: 20px;
+            right: 23px;
+            background-repeat: no-repeat;
+            background-position: center; 
+        }
+    }
+
+    .user-icon {
+        width: 21px;
+        height: 26px;
+        background-image: url("../images/user.svg");
+        background-size: 21px 26px;
+    }
+
+    .email-light-icon {
+        bottom: 25px !important;
+        width: 23px;
+        height: 16px;
+        background-image: url("../images/mail.svg");
+        background-size: 23px 16px;
+    }
+
+    .tel-icon {
+        width: 15px;
+        height: 26px;
+        background-image: url("../images/tel.svg");
+        background-size: 15px 26px;
+    }
+
+    .company-icon {
+        width: 15px;
+        height: 29px;
+        background-image: url("../images/building.svg");
+        background-size: 15px 29px;
+    }
+
+    .project__form--services {
+        gap: 22px 28px;
+
+        &:has(.project__input) .project__input {
+            display: none;
+
+            &:checked + .project__label {
+                border-color: var(--main-color);
+            }
+        }
+
+        &:has(.project__label) .project__label {
+            @include mx.flexbox(row, center, flex-start);
+            gap: 12px;
+            min-width: 284px;
+            padding: 24px 26px;
+            @include mx.typography("DM Sans", 500, 18px, 20px, start, var(--neutral-800));
+            border-radius: 16px;
+            border: 2px solid var(--neutral-300);
+            background: var(--neutral-100);
+            box-shadow: 0px 2px 6px 0px rgba(19, 18, 66, 0.07);
+
+            &::before {
+                content: "";
+                @include mx.flexbox(row, center, center);
+                width: 67px;
+                height: 67px;
+                border-radius: 50%;
+            }
+
+        }
+
+        &:has(.project__form-group) .project__form-group {
+            &:first-child .project__label::before {
+                background: rgba(74, 58, 255, 0.15) url("../images/dev.svg") no-repeat center; 
+            }
+
+            &:nth-child(2) .project__label::before {
+                background: rgba(74, 58, 255, 0.15) url("../images/webdev.svg") no-repeat center; 
+            }
+
+            &:nth-child(3) .project__label::before {
+                background: rgba(74, 58, 255, 0.15) url("../images/marketing.svg") no-repeat center; 
+            }
+
+            &:nth-child(4) .project__label::before {
+                background: rgba(74, 58, 255, 0.15) url("../images/setting.svg") no-repeat center; 
+            }
+        }
+
+    }
+
+   
+
+    .project__form--budget {
+        gap: 21px 28px;
+        
+        
+        &:has(.project__input) .project__input {
+            display: none;
+
+            &:checked + .project__label {
+                border-color: var(--main-color);
+
+                &::before {
+                    background: var(--neutral-100) url("../images/circle.svg") no-repeat center;
+                }
+            }
+        }
+
+        &:has(.project__label) .project__label {
+            @include mx.flexbox(row, center, flex-start);
+            gap: 12.5px;
+            min-width: 284px;
+            padding: 46px 32px 45px;
+            @include mx.typography("DM Sans", 500, 18px, 20px, start, var(--neutral-800));
+            border-radius: 16px;
+            border: 2px solid var(--neutral-300);
+            background: var(--neutral-100);
+            box-shadow: 0px 2px 6px 0px rgba(19, 18, 66, 0.07);
+
+            &::before {
+                content: "";
+                @include mx.flexbox(row, center, center);
+                width: 25px;
+                height: 25px;
+                border: 1.2px solid var(--neutral-400);
+                border-radius: 50%;
+                background-color: var(--neutral-100);
+                box-shadow: 0px -3px 7px 0px rgba(20, 20, 43, 0.08) inset;
+            }
+
+        }
+    
+    }
+
+    .project__card-step-wrapper.submit-step {
+        padding-top: 0;
+    }
+
+    .project__card-step-wrapper:has(.project__inner-card) {
+        @include mx.flexbox(column, center, center);
+    }
+    
+    .project__inner-card {
+        align-self: center;
+        @include mx.flexbox(column, center, center);
+        max-width: 495px;
+        width: 100%;
+        padding-bottom: 3px;
+    }
+
+    .project__inner-card-details-wrapper {
+        @include mx.flexbox(column, center, center);
+        margin-bottom: 24px;
+
+        &::before {
+            content: '';
+            width: 158px;
+            height: 144px;
+            margin-bottom: 18.3px;
+            background: url("../images/submitted.svg") no-repeat center;
+        }
+    }
+
+    .project__inner-card-title {
+        margin-top: 0;
+        margin-bottom: 7.5px;
+        @include mx.typography("DM Sans", 700, 24px, 35px, center, var(--neutral-800));
+    }
+
+    .project__inner-card-desc {
+        @include mx.remove-margin;
+        @include mx.typography("DM Sans", 400, 18px, 30px, center, var(--neutral-600));
+    }
+
+    .project__inner-card-btn {
+        min-width: 148px;
+        padding: 20px 20px 21px;
+        @include mx.typography("DM Sans", 700, 18px, 20px, center, var(--neutral-100));
+        border: none;
+        border-radius: 56px;
+        background-color: var(--main-color);
+        box-shadow: 0px 3px 12px 0px rgba(74, 58, 255, 0.18);
+        cursor: pointer;
+    }
+
+
+    .project__card-controller {
+        @include mx.flexbox(row, center, flex-start);
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .project__card-controller-btn {
+        cursor: pointer;
+    }
+
+    .previous-btn {
+        min-width: 192px;
+        padding: 19px 40px 21px;
+        @include mx.typography("DM Sans", 400, 18px, 20px, center, var(--main-color));
+        border-radius: 66px;
+        border: 1px solid var(--main-color);
+        background-color: var(--neutral-100);
+    }
+
+    .next-btn {
+        min-width: 165px;
+        margin-left: auto;
+        padding: 20px 40px 21px;
+        @include mx.typography("DM Sans", 700, 18px, 20px, center, var(--neutral-100));
+        border: none;
+        border-radius: 56px;
+        background: var(--main-color);
+        box-shadow: 0px 3px 12px 0px rgba(74, 58, 255, 0.18);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}

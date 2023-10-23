@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Multi-Step Form</title>
+      <link rel="icon" type="image/x-icon" href="./images/favicon.svg">
+      <link rel="stylesheet" href="./slick/slick.css">
+      <link rel="stylesheet" href="./slick/slick-theme.css">
+      <link rel="stylesheet" href="./css/main.min.css">
+   </head>
+   <body>
+      <header class="site-header">
+         <div class="container">
+            <div class="site-header__wrapper">
+               <a class="logo" href="./index.html">
+               <img src="./images/logo.svg" alt="Logo">
+               </a>
+               <button class="site-header__btn js-header-btn" type="button">
+               Register
+               </button>
+            </div>
+         </div>
+      </header>
+      <main class="site-main">
+         <section class="auth js-auth-section">
+            <div class="container">
+               <div class="auth__wrapper">
+                  <div class="auth__inner-wrapper">
+                     <div class="auth__details-wrapper">
+                        <h1 class="auth__title" title="Welcome">
+                           Welcome
+                        </h1>
+                        <p class="auth__desc" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                           Quam duis vitae curabitur amet, fermentum lorem. ">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                           Quam duis vitae curabitur amet, fermentum lorem. 
+                        </p>
+                     </div>
+                     <form class="auth__form js-auth-form" autocomplete="off">
+                        <div class="auth__row">
+                           <div class="auth__form-group form-group auth__col">
+                              <label class="auth__label" for="f-name">First name <span class="auth__stage required-stage">*</span></label>
+                              <input id="f-name" class="auth__input js-first-name" type="text" name="first_name" placeholder="Your name">
+                              <span class="auth__error-msg js-first-name-error"></span>
+                           </div>
+                           <div class="auth__form-group form-group auth__col">
+                              <label class="auth__label" for="l-name">Last name <span class="auth__stage required-stage">*</span></label>
+                              <input id="l-name" class="auth__input js-last-name" type="text" name="last_name" placeholder="Your last name">
+                              <span class="auth__error-msg js-last-name-error"></span>
+                           </div>
+                        </div>
+                        <div class="auth__form-group form-group">
+                           <label class="auth__label" for="email">E-mail <span class="auth__stage required-stage">*</span></label>
+                           <input id="email" class="auth__input js-email" type="email" name="email" placeholder="yourmail@gmail.com">
+                           <span class="auth__error-msg js-email-error"></span>
+                           <span class="auth__icon email-icon"></span>
+                        </div>
+                        <div class="auth__form-group form-group">
+                           <label class="auth__label" for="password">Password <span class="auth__stage required-stage">*</span></label>
+                           <input id="password" class="auth__input js-password" type="password" name="password" placeholder="•••••••••••••">
+                           <span class="auth__error-msg js-password-error"></span>
+                           <span class="auth__icon eye-icon js-password-eye-icon"></span>
+                        </div>
+                        <div class="auth__form-group form-group">
+                           <label class="auth__label" for="c-password">Repeat Password <span class="auth__stage required-stage">*</span></label>
+                           <input id="c-password" class="auth__input js-confirm-password" type="password" name="confirm_password" placeholder="•••••••••••••">
+                           <span class="auth__error-msg js-confirm-password-error"></span>
+                           <span class="auth__icon eye-icon js-c-password-eye-icon"></span>
+                        </div>
+                        <div class="auth__form-group form-group">
+                           <label class="auth__label" for="gender">Gender <span class="auth__stage">*</span></label>
+                           <select id="gender" class="auth__input js-gender" name="gender">
+                              <option value="" hidden>Select your gender</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                           </select>
+                           <span class="auth__error-msg js-gender-error"></span>
+                           <span class="auth__icon arrdown-icon"></span>
+                        </div>
+                        <div class="auth__form-group form-group">
+                           <label class="auth__label" for="dob">Birthday <span class="auth__stage">*</span></label>
+                           <input id="dob" class="auth__input js-dob" type="date" name="dob">
+                           <span class="auth__error-msg js-dob-error"></span>
+                           <span class="auth__icon date-icon"></span>
+                        </div>
+                        <div class="auth__form-group form-group">
+                           <input id="confirmation" class="auth__confirmation-input js-agreement" type="checkbox" name="agree">
+                           <label class="auth__confirmation-label" for="confirmation">
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                           <a class="auth__confirmation-link" href="#">
+                           Gravida eget ultricies
+                           </a> 
+                           pharetra scelerisque duis cursus.
+                           </label>
+                        </div>
+                        <button class="auth__form-btn" type="submit">
+                        Enter
+                        </button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="project js-project-section">
+            <div class="container">
+               <div class="project__wrapper">
+                  <div class="project__inner-wrapper">
+                     <div class="project__details-wrapper">
+                        <h2 class="project__title" title="Get a project quote">
+                           Get a project quote
+                        </h2>
+                        <p class="project__desc" title="Please fill the form below to receive a quote for your project. 
+                           Feel free to add as much detail as needed.">
+                           Please fill the form below to receive a quote for your project. Feel free to add as much detail as needed.
+                        </p>
+                     </div>
+                     <div class="project__card">
+                        <div class="project__card-header">
+                           <div class="project__progress-wrapper">
+                              <span class="project__point active-point">1</span>
+                              <span class="project__line half-line"></span>
+                              <span class="project__point">2</span>
+                              <span class="project__line"></span>
+                              <span class="project__point">3</span>
+                              <span class="project__line"></span>
+                              <span class="project__point">4</span>
+                           </div>
+                        </div>
+                        <div class="project__card-body js-card-body">
+                           <div class="project__card-step-wrapper step-1" data-step="1">
+                              <div class="project__card-info-wrapper">
+                                 <h3 class="project__card-title" title="Contact details">
+                                    Contact details
+                                 </h3>
+                                 <p class="project__card-desc" title="Lorem ipsum dolor sit amet consectetur adipisc.">
+                                    Lorem ipsum dolor sit amet consectetur adipisc.
+                                 </p>
+                              </div>
+                              <form class="project__form project__form--customer-info js-project-form js-customer-info-form" autocomplete="off">
+                                 <div class="project__form-group form-group">
+                                    <label class="project__label" for="customer-name">Name</label>
+                                    <input id="customer-name" class="project__input js-customer-name" type="text" name="customer_name" placeholder="Name" aria-label="Enter your name">
+                                    <span class="project__error-msg js-customer-name-error"></span>
+                                    <span class="project__icon user-icon"></span>
+                                 </div>
+                                 <div class="project__form-group form-group">
+                                    <label class="project__label" for="customer-email">Email</label>
+                                    <input id="customer-email" class="project__input js-customer-email" type="email" name="customer_email" placeholder="Email" aria-label="Enter your email">
+                                    <span class="project__error-msg js-customer-email-error"></span>
+                                    <span class="project__icon email-light-icon"></span>
+                                 </div>
+                                 <div class="project__form-group form-group">
+                                    <label class="project__label" for="customer-tel">Phone Number</label>
+                                    <input id="customer-tel" class="project__input js-customer-tel" type="tel" name="customer_tel" placeholder="(123) 456 - 7890" aria-label="Enter your phone number">
+                                    <span class="project__error-msg js-customer-tel-error"></span>
+                                    <span class="project__icon tel-icon"></span>
+                                 </div>
+                                 <div class="project__form-group form-group">
+                                    <label class="project__label" for="customer-company-name">Company</label>
+                                    <input id="customer-company-name" class="project__input js-customer-company-name" type="text" name="customer_name" placeholder="Company name" aria-label="Enter your company name">
+                                    <span class="project__error-msg js-customer-company-name-error"></span>
+                                    <span class="project__icon company-icon"></span>
+                                 </div>
+                              </form>
+                           </div>
+                           <div class="project__card-step-wrapper step-2" data-step="2">
+                              <div class="project__card-info-wrapper">
+                                 <h3 class="project__card-title" title="Our services">
+                                    Our services
+                                 </h3>
+                                 <p class="project__card-desc" title="Please select which service you are interested in.">
+                                    Please select which service you are interested in.
+                                 </p>
+                              </div>
+                              <form class="project__form project__form--services js-project-form js-service-form" autocomplete="off">
+                                 <div class="project__form-group">
+                                    <input id="development" class="project__input js-development-input" type="radio" value="Development" name="service">
+                                    <label class="project__label" for="development">Development</label>
+                                 </div>
+                                 <div class="project__form-group">
+                                    <input id="web-design" class="project__input js-web-design-input" type="radio" value="Web Design" name="service">
+                                    <label class="project__label" for="web-design">Web Design</label>
+                                 </div>
+                                 <div class="project__form-group">
+                                    <input id="marketing" class="project__input js-marketing-input" type="radio" value="Marketing" name="service">
+                                    <label class="project__label" for="marketing">Marketing</label>
+                                 </div>
+                                 <div class="project__form-group">
+                                    <input id="other" class="project__input js-other-input" type="radio" value="Other" name="service">
+                                    <label class="project__label" for="other">Other</label>
+                                 </div>
+                              </form>
+                           </div>
+                           <div class="project__card-step-wrapper step-3" data-step="3">
+                              <div class="project__card-info-wrapper">
+                                 <h3 class="project__card-title" title="What's your project budget?">
+                                    What's your project budget?
+                                 </h3>
+                                 <p class="project__card-desc" title="Please select the project budget range you have in mind.">
+                                    Please select the project budget range you have in mind.
+                                 </p>
+                              </div>
+                              <form class="project__form project__form--budget js-project-form js-budget-form" autocomplete="off">
+                                 <div class="project__form-group">
+                                    <input id="small-project" class="project__input js-small-project" type="radio" value="$5.000 - $10.000" name="budget">
+                                    <label class="project__label" for="small-project">$5.000 - $10.000</label>
+                                 </div>
+                                 <div class="project__form-group">
+                                    <input id="medium-project" class="project__input js-medium-project" type="radio" value="$10.000 - $20.000" name="budget">
+                                    <label class="project__label" for="medium-project">$10.000 - $20.000</label>
+                                 </div>
+                                 <div class="project__form-group">
+                                    <input id="big-project" class="project__input js-big-project" type="radio" value="$20.000 - $50.000" name="budget">
+                                    <label class="project__label" for="big-project">$20.000 - $50.000</label>
+                                 </div>
+                                 <div class="project__form-group">
+                                    <input id="large-project" class="project__input js-large-project" type="radio" value="$50.000 +" name="budget">
+                                    <label class="project__label" for="large-project">$50.000 +</label>
+                                 </div>
+                              </form>
+                           </div>
+                           <div class="project__card-step-wrapper submit-step step-4" data-step="4">
+                              <div class="project__inner-card">
+                                 <div class="project__inner-card-details-wrapper">
+                                    <h3 class="project__inner-card-title" title="Submit your quote request">
+                                       Submit your quote request
+                                    </h3>
+                                    <p class="project__inner-card-desc" title="Please review all the information you previously 
+                                       typed in the past steps, and if all is okay, submit your message to receive a project 
+                                       quote in 24 - 48 hours.">
+                                       Please review all the information you previously 
+                                       typed in the past steps, and if all is okay, submit 
+                                       your message to receive a project quote in 24 - 48 hours.
+                                    </p>
+                                 </div>
+                                 <button class="project__inner-card-btn js-preview-btn" type="button">
+                                 Preview
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="project__card-controller">
+                        <button class="project__card-controller-btn previous-btn js-prev-btn" type="button">Previous step</button>
+                        <button class="project__card-controller-btn next-btn js-next-btn" type="button">Next step</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="description js-description">
+            <div class="container">
+               <div class="description__wrapper">
+                  <h2 class="description__title" title="Project description">
+                     Project description
+                  </h2>
+                  <div class="description__card">
+                     <ol class="description__list">
+                        <li class="description__item">
+                           NAME: <span class="description__item-stage js-description-name">John Doe</span>
+                        </li>
+                        <li class="description__item">
+                           EMAIL: <span class="description__item-stage js-description-email">john.doe@mail.ru</span>
+                        </li>
+                        <li class="description__item">
+                           CONTACT: <span class="description__item-stage js-description-contact">+99890 600 70 50</span>
+                        </li>
+                        <li class="description__item">
+                           COMPANY: <span class="description__item-stage js-description-company">Delta</span>
+                        </li>
+                        <li class="description__item">
+                           SERVICE: <span class="description__item-stage js-description-service">Web Design</span>
+                        </li>
+                        <li class="description__item">
+                           BUDGET: <span class="description__item-stage js-description-budget">50,000 $ +</span>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      <footer class="site-footer">
+         <div class="container">
+            <div class="site-footer__wrapper">
+               <div class="site-footer__details-wrapper">
+                  <a class="logo" href="./index.html">
+                  <img src="./images/logo.svg" alt="Logo">
+                  </a>
+                  <span class="copyright">
+                  Copyright &copy; 2021 BRIX Templates | All Rights Reserved
+                  </span>
+               </div>
+               <form class="site-footer__form" autocomplete="off">
+                  <input class="site-footer__input" type="email" name="user_email" placeholder="Enter your email" aria-label="Enter your email" required>
+                  <button class="site-footer__form-btn" type="submit">
+                  Subscribe
+                  </button>
+               </form>
+            </div>
+         </div>
+      </footer>
+      <script src="./js/jquery.min.js"></script>
+      <script src="./js/jquery-migrate.min.js"></script>
+      <script src="./slick/slick.min.js"></script>
+      <script src="./js/app.js"></script>
+   </body>
+</html>

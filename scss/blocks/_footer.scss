@@ -1,0 +1,66 @@
+@use "../mixins" as mx;
+
+@media only screen and (min-width: 0) {
+    .site-footer {
+        padding-top: 57px;
+        padding-bottom: 57px;
+        background-color: var(--neutral-100);
+        border-top: 1px solid var(--neutral-400);
+    }
+
+    .site-footer__wrapper {
+        @include mx.flexbox(row, center, space-between);
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .site-footer__details-wrapper {
+        @include mx.flexbox(column, flex-start, center);
+        gap: 18px;
+    }
+
+    .site-footer__form {
+        @include mx.flexbox(row, center, center);
+        position: relative;
+    }
+
+    .site-footer__input {
+        width: 507px;
+        padding: 26px 150px 28px 31px;
+        @include mx.typography("DM Sans", 400, 18px, 20px, start, var(--neutral-600));
+        border-radius: 60px;
+        border: 1px solid var(--neutral-300);
+        background: var(--neutral-100);
+        box-shadow: 0px 8px 25px 0px rgba(13, 10, 44, 0.06);
+
+        &::placeholder {
+            @include mx.typography("DM Sans", 400, 18px, 20px, start, var(--neutral-600));
+        }
+    }
+
+    .site-footer__form-btn {
+        position: absolute;
+        right: 16px;
+        min-width: 129px;
+        padding: 14px 26px 17px;
+        @include mx.typography("DM Sans", 500, 16px, 18px, center, var(--neutral-100));
+        border:none;
+        border-radius: 56px;
+        background: var(--main-color);
+        box-shadow: 0px 3px 12px 0px rgba(74, 58, 255, 0.18);
+        cursor: pointer;
+    }
+
+    .copyright {
+        @include mx.typography("DM Sans", 400, 18px, 30px, start, var(--neutral-600));
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}

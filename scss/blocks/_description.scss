@@ -1,0 +1,59 @@
+@use "../mixins" as mx;
+
+
+@media only screen and (min-width: 0) {
+    .description {
+        padding-top: 42px;
+        padding-bottom: 80px;
+    }
+
+    .description__wrapper {
+        @include mx.flexbox(column, center, center);
+        gap: 50px;
+    }
+
+    .description__title {
+        @include mx.remove-margin;
+        @include mx.typography("DM Sans", 700, 34px, 46px, center, var(--neutral-800));
+    }
+
+    .description__card {
+        max-width: 698px;
+        width: 100%;
+        padding: 60px 62px 150px;
+        border-radius: 34px;
+        border: 1px solid var(--neutral-300);
+        background-color: var(--neutral-100);
+        box-shadow: 0px 5px 16px 0px rgba(8, 15, 52, 0.06);
+    }
+
+    .description__list {
+        @include mx.list-unstyled;
+        @include mx.flexbox(column, flex-start, flex-start);
+        gap: 17px;
+    }
+
+    .description__item {
+        @include mx.typography("DM Sans", 700, 18px, 46px, center, var(--main-txt-color));
+    }
+
+    .description__item-stage {
+        font-weight: 500;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .description {
+        padding-top: 52px;
+        padding-bottom: 305px;
+    }
+
+    .description__item {
+        font-size: 34px;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
