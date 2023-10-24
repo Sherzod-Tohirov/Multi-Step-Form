@@ -31,11 +31,11 @@ let current_step = 1;
 
 const elAuthSection = get('js-auth-section');
 const elProjectSection = get('js-project-section');
-const elDescription = get('js-description');
+const elDescriptionSection = get('js-description');
 
 elAuthSection.style.display = 'none';
 elProjectSection.style.display = 'none';
-elDescription.style.display = 'none';
+elDescriptionSection.style.display = 'none';
 
 const elHeaderBtn = get('js-header-btn');
 
@@ -315,7 +315,7 @@ function decreaseProgressBar() {
 function createDescriptionSection() {
     elPreviewBtn.addEventListener('click', (evt) => {
         if(Object.keys(customer_info).length && service_name && budget) {
-            renderSection(elDescription);
+            renderSection(elDescriptionSection);
             renderDescriptionData(customer_info, service_name, budget);
         }
     });
@@ -371,13 +371,14 @@ function handleRegisteredUserData() {
     elAuthForm.addEventListener('submit', (evt) => {
         evt.preventDefault();
         
+
         if(!validate(elFirstNameInput, "First name", elFirstNameError, ["required"])) return;
         if(!validate(elLastNameInput, "Last name", elLastNameError, ["required"])) return;
         if(!validate(elEmailInput, "Email", elEmailError, ["required", "gmail"])) return;
         if(!validate(elPasswordInput, "Password", elPasswordError, ["required", "password"])) return;
         if(!validate(elConfirmPasswordInput, "Repeat password", elConfirmPasswordError, ["required", "confirm_password"])) return;
         if(!validate(elAgreementInput, undefined, undefined, ["checked"])) return;
-    
+
         const user_data = {
             firstName: elFirstNameInput.value.trim(),
             lastName: elLastNameInput.value.trim(),
@@ -385,7 +386,6 @@ function handleRegisteredUserData() {
             password: elPasswordInput.value.trim()
         }
 
-    
         if(user_data) {
             window.localStorage.setItem("user_data", JSON.stringify(user_data));
             const reverseFirstName = user_data?.firstName.split('').reverse().join('$');
@@ -395,8 +395,6 @@ function handleRegisteredUserData() {
             window.localStorage.setItem("token", token);
             checkAuth();
         }
-    
-    
     
     });
 
@@ -419,10 +417,12 @@ function checkAuth() {
             elHeaderBtn.classList.remove('logout');
             elHeaderBtn.textContent = 'Register';
             window.localStorage.removeItem("token");
+            checkAuth();
         });
     }else {
         elAuthSection.style.display = 'block';
         elProjectSection.style.display = 'none';
+        elDescriptionSection.style.display = 'none';
     }
 
     handleRegisteredUserData();
@@ -533,7 +533,7 @@ function validate(el, elName, elError, options = []) {
 function renderSection(section) {
     elAuthSection.style.display = 'none';
     elProjectSection.style.display = 'none';
-    elDescription.style.display = 'none';
+    elDescriptionSection.style.display = 'none';
 
     section.style.display = 'block';
 }
